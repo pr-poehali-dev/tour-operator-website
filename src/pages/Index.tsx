@@ -28,74 +28,98 @@ interface Tour {
 const tours: Tour[] = [
   {
     id: 1,
-    title: 'Райские пляжи Бали',
-    destination: 'Индонезия',
-    image: 'https://cdn.poehali.dev/projects/6f3fe8b0-bb5f-4fad-8f61-1495704d91c9/files/6f454991-cb01-43c9-a3b4-691551ac8d43.jpg',
-    price: 89000,
-    duration: '10 дней',
-    rating: 4.9,
-    reviews: 234,
-    description: 'Незабываемый отдых на белоснежных пляжах Бали с посещением древних храмов',
-    included: ['Перелет', 'Отель 5*', 'Экскурсии', 'Страховка']
+    title: 'Остров Ольхон',
+    destination: 'Озеро Байкал',
+    image: 'https://cdn.poehali.dev/projects/6f3fe8b0-bb5f-4fad-8f61-1495704d91c9/files/8e3f4ead-5bae-4714-9853-20edcf974f7e.jpg',
+    price: 15000,
+    duration: '3 дня',
+    rating: 5.0,
+    reviews: 342,
+    description: 'Сердце Байкала - шаманские скалы, чистейшая вода и невероятные пейзажи',
+    included: ['Трансфер', 'Проживание', 'Питание', 'Экскурсии']
   },
   {
     id: 2,
-    title: 'Альпийские вершины',
-    destination: 'Швейцария',
-    image: 'https://cdn.poehali.dev/projects/6f3fe8b0-bb5f-4fad-8f61-1495704d91c9/files/5638a031-4ccd-49c2-bf8d-b91572e36599.jpg',
-    price: 125000,
-    duration: '7 дней',
-    rating: 5.0,
-    reviews: 189,
-    description: 'Горнолыжный курорт с захватывающими видами на Альпы',
-    included: ['Перелет', 'Отель 4*', 'Ski-pass', 'Трансфер']
+    title: 'Листвянка',
+    destination: 'Озеро Байкал',
+    image: 'https://cdn.poehali.dev/projects/6f3fe8b0-bb5f-4fad-8f61-1495704d91c9/files/5be6e3e7-cef3-4ba6-9baa-741c6744e639.jpg',
+    price: 8000,
+    duration: '2 дня',
+    rating: 4.9,
+    reviews: 567,
+    description: 'Ближайший курорт от Иркутска - нерпинарий, музей Байкала, прогулки на катере',
+    included: ['Трансфер', 'Гостиница', 'Экскурсии', 'Питание']
   },
   {
     id: 3,
-    title: 'Исторический Рим',
-    destination: 'Италия',
-    image: 'https://cdn.poehali.dev/projects/6f3fe8b0-bb5f-4fad-8f61-1495704d91c9/files/d88b1533-8328-4f63-a3f3-8d9900cfb2e6.jpg',
-    price: 67000,
-    duration: '6 дней',
+    title: 'Большое Голоустное',
+    destination: 'Озеро Байкал',
+    image: 'https://cdn.poehali.dev/projects/6f3fe8b0-bb5f-4fad-8f61-1495704d91c9/files/c0e1d969-f947-4b0d-b579-ced3a86c8fc6.jpg',
+    price: 12000,
+    duration: '3 дня',
     rating: 4.8,
-    reviews: 312,
-    description: 'Путешествие по древним улицам Рима с профессиональным гидом',
-    included: ['Перелет', 'Отель 4*', 'Экскурсии', 'Завтраки']
+    reviews: 189,
+    description: 'Уединённое место с песчаными пляжами - идеально для отдыха от цивилизации',
+    included: ['Трансфер', 'Палаточный лагерь', 'Питание', 'Рыбалка']
+  },
+  {
+    id: 4,
+    title: 'Аршан',
+    destination: 'Бурятия',
+    image: 'https://cdn.poehali.dev/projects/6f3fe8b0-bb5f-4fad-8f61-1495704d91c9/files/f37e986f-674d-4f1d-9ac7-fac38a025ef2.jpg',
+    price: 18000,
+    duration: '4 дня',
+    rating: 5.0,
+    reviews: 423,
+    description: 'Целебные минеральные источники в горах Саян - здоровье и красота природы',
+    included: ['Трансфер', 'Санаторий', 'Питание', 'Лечение']
+  },
+  {
+    id: 5,
+    title: 'Посёлок Вышка',
+    destination: 'Бурятия',
+    image: 'https://cdn.poehali.dev/projects/6f3fe8b0-bb5f-4fad-8f61-1495704d91c9/files/94044f12-49d6-4c34-876b-87e58b3f2c9d.jpg',
+    price: 10000,
+    duration: '2 дня',
+    rating: 4.7,
+    reviews: 156,
+    description: 'Уютный горный курорт с термальными источниками и живописными видами',
+    included: ['Трансфер', 'Проживание', 'Питание', 'Экскурсии']
   }
 ];
 
 const destinations = [
-  { name: 'Европа', count: 45, icon: 'Castle' },
-  { name: 'Азия', count: 62, icon: 'Palmtree' },
-  { name: 'Америка', count: 28, icon: 'Mountain' },
-  { name: 'Океания', count: 15, icon: 'Waves' },
-  { name: 'Африка', count: 19, icon: 'Sun' }
+  { name: 'Озеро Байкал', count: 8, icon: 'Waves' },
+  { name: 'Бурятия', count: 5, icon: 'Mountain' },
+  { name: 'Иркутская область', count: 12, icon: 'Trees' },
+  { name: 'Зимние туры', count: 6, icon: 'Snowflake' },
+  { name: 'Летние туры', count: 10, icon: 'Sun' }
 ];
 
 const reviews = [
   {
-    name: 'Екатерина Смирнова',
-    avatar: 'ЕС',
+    name: 'Алексей Соколов',
+    avatar: 'АС',
     rating: 5,
-    text: 'Потрясающий отдых на Бали! Все организовано идеально, отель превзошел ожидания',
-    tour: 'Райские пляжи Бали',
-    date: '15 марта 2024'
+    text: 'Ольхон - это магия! Байкал покорил с первого взгляда. Организация на высшем уровне',
+    tour: 'Остров Ольхон',
+    date: '15 июля 2024'
   },
   {
-    name: 'Дмитрий Петров',
-    avatar: 'ДП',
+    name: 'Мария Волкова',
+    avatar: 'МВ',
     rating: 5,
-    text: 'Альпы - это нечто невероятное! Спасибо за незабываемые впечатления',
-    tour: 'Альпийские вершины',
-    date: '8 февраля 2024'
+    text: 'Аршан - идеальное место для восстановления сил. Воздух, вода, горы - всё прекрасно!',
+    tour: 'Аршан',
+    date: '3 августа 2024'
   },
   {
-    name: 'Анна Иванова',
-    avatar: 'АИ',
+    name: 'Сергей Кузнецов',
+    avatar: 'СК',
     rating: 5,
-    text: 'Рим покорил наши сердца. Экскурсии были познавательными и интересными',
-    tour: 'Исторический Рим',
-    date: '22 января 2024'
+    text: 'Листвянка понравилась всей семье. Дети в восторге от нерпинария!',
+    tour: 'Листвянка',
+    date: '20 июня 2024'
   }
 ];
 
@@ -124,7 +148,7 @@ export default function Index() {
           <div className="flex items-center gap-2">
             <Icon name="Plane" className="h-8 w-8 text-primary" />
             <span className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              TravelPro
+              БайкалТур
             </span>
           </div>
           <nav className="hidden md:flex gap-6">
@@ -159,23 +183,23 @@ export default function Index() {
         <div className="container relative">
           <div className="mx-auto max-w-4xl text-center animate-fade-in">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-              Откройте мир с TravelPro
+              Откройте красоту Байкала
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
-              Более 150 направлений по всему миру. Профессиональная организация туров с 2010 года
+              Туры по Байкалу и Бурятии из Иркутска. Профессиональные гиды и незабываемые впечатления
             </p>
             <div className="flex flex-wrap gap-4 justify-center mb-12">
               <div className="flex items-center gap-2 bg-white rounded-lg px-4 py-2 shadow-md">
-                <Icon name="Award" className="h-5 w-5 text-accent" />
-                <span className="font-semibold">14 лет опыта</span>
+                <Icon name="MapPin" className="h-5 w-5 text-accent" />
+                <span className="font-semibold">Иркутск</span>
               </div>
               <div className="flex items-center gap-2 bg-white rounded-lg px-4 py-2 shadow-md">
-                <Icon name="Users" className="h-5 w-5 text-primary" />
-                <span className="font-semibold">50 000+ туристов</span>
+                <Icon name="Waves" className="h-5 w-5 text-primary" />
+                <span className="font-semibold">Байкал</span>
               </div>
               <div className="flex items-center gap-2 bg-white rounded-lg px-4 py-2 shadow-md">
-                <Icon name="Star" className="h-5 w-5 text-secondary" />
-                <span className="font-semibold">4.9 рейтинг</span>
+                <Icon name="Mountain" className="h-5 w-5 text-secondary" />
+                <span className="font-semibold">Бурятия</span>
               </div>
             </div>
 
@@ -447,31 +471,31 @@ export default function Index() {
       <section id="about" className="py-16 bg-gradient-to-br from-primary/5 to-secondary/5">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">О компании TravelPro</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">О компании БайкалТур</h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Мы - команда профессионалов с 14-летним опытом организации туров по всему миру. 
-              Наша миссия - делать путешествия доступными, безопасными и незабываемыми.
+              Мы находимся в Иркутске и специализируемся на турах по озеру Байкал и Бурятии. 
+              Познакомим вас с жемчужиной Сибири - Листвянкой, Ольхоном, Большим Голоустным, Аршаном и посёлком Вышка.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
               <Card>
                 <CardContent className="p-6 text-center">
-                  <Icon name="Shield" className="h-12 w-12 mx-auto mb-4 text-primary" />
-                  <h3 className="font-semibold mb-2">Безопасность</h3>
-                  <p className="text-sm text-muted-foreground">Страхование и поддержка 24/7</p>
+                  <Icon name="Waves" className="h-12 w-12 mx-auto mb-4 text-primary" />
+                  <h3 className="font-semibold mb-2">Озеро Байкал</h3>
+                  <p className="text-sm text-muted-foreground">Самое глубокое озеро планеты</p>
                 </CardContent>
               </Card>
               <Card>
                 <CardContent className="p-6 text-center">
-                  <Icon name="ThumbsUp" className="h-12 w-12 mx-auto mb-4 text-secondary" />
-                  <h3 className="font-semibold mb-2">Качество</h3>
-                  <p className="text-sm text-muted-foreground">Проверенные отели и маршруты</p>
+                  <Icon name="Mountain" className="h-12 w-12 mx-auto mb-4 text-secondary" />
+                  <h3 className="font-semibold mb-2">Бурятия</h3>
+                  <p className="text-sm text-muted-foreground">Целебные источники и горные пейзажи</p>
                 </CardContent>
               </Card>
               <Card>
                 <CardContent className="p-6 text-center">
-                  <Icon name="Sparkles" className="h-12 w-12 mx-auto mb-4 text-accent" />
-                  <h3 className="font-semibold mb-2">Индивидуальность</h3>
-                  <p className="text-sm text-muted-foreground">Туры под ваши пожелания</p>
+                  <Icon name="Users" className="h-12 w-12 mx-auto mb-4 text-accent" />
+                  <h3 className="font-semibold mb-2">Местные гиды</h3>
+                  <p className="text-sm text-muted-foreground">Профессионалы из Иркутска</p>
                 </CardContent>
               </Card>
             </div>
@@ -522,21 +546,21 @@ export default function Index() {
                     <Icon name="Phone" className="h-6 w-6" />
                     <div>
                       <p className="font-semibold">Телефон</p>
-                      <p className="text-white/80">+7 (495) 123-45-67</p>
+                      <p className="text-white/80">+7 (3952) 500-100</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
                     <Icon name="Mail" className="h-6 w-6" />
                     <div>
                       <p className="font-semibold">Email</p>
-                      <p className="text-white/80">info@travelpro.ru</p>
+                      <p className="text-white/80">info@baikal-tour.ru</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
                     <Icon name="MapPin" className="h-6 w-6" />
                     <div>
                       <p className="font-semibold">Адрес</p>
-                      <p className="text-white/80">Москва, ул. Тверская, 15</p>
+                      <p className="text-white/80">Иркутск, ул. Ленина, 1</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
@@ -565,7 +589,7 @@ export default function Index() {
                   </div>
                   <div className="space-y-2">
                     <Label>Сообщение</Label>
-                    <Input placeholder="Интересует тур на Бали..." />
+                    <Input placeholder="Интересует тур на Ольхон..." />
                   </div>
                   <Button className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90">
                     Отправить
@@ -582,9 +606,9 @@ export default function Index() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-2">
               <Icon name="Plane" className="h-6 w-6 text-primary" />
-              <span className="font-bold">TravelPro</span>
+              <span className="font-bold">БайкалТур</span>
             </div>
-            <p className="text-sm text-muted-foreground">© 2024 TravelPro. Все права защищены.</p>
+            <p className="text-sm text-muted-foreground">© 2024 БайкалТур. Туры по Байкалу из Иркутска</p>
             <div className="flex gap-4">
               <Button variant="ghost" size="icon">
                 <Icon name="Instagram" className="h-5 w-5" />
