@@ -85,15 +85,87 @@ const tours: Tour[] = [
     reviews: 156,
     description: 'Уютный горный курорт с термальными источниками и живописными видами',
     included: ['Трансфер', 'Проживание', 'Питание', 'Экскурсии']
+  },
+  {
+    id: 6,
+    title: 'Пик Любви',
+    destination: 'Походы',
+    image: 'https://cdn.poehali.dev/projects/6f3fe8b0-bb5f-4fad-8f61-1495704d91c9/files/4787af63-99db-42e6-8cb0-6a711f397aae.jpg',
+    price: 6500,
+    duration: '1 день',
+    rating: 4.9,
+    reviews: 278,
+    description: 'Популярный пик с панорамным видом на Байкал - идеально для однодневного похода',
+    included: ['Гид', 'Снаряжение', 'Перекус', 'Страховка']
+  },
+  {
+    id: 7,
+    title: 'Пик Галина',
+    destination: 'Походы',
+    image: 'https://cdn.poehali.dev/projects/6f3fe8b0-bb5f-4fad-8f61-1495704d91c9/files/4787af63-99db-42e6-8cb0-6a711f397aae.jpg',
+    price: 7500,
+    duration: '2 дня',
+    rating: 5.0,
+    reviews: 145,
+    description: 'Живописный пик с ночёвкой у подножия - звёздное небо и восход солнца',
+    included: ['Гид', 'Палатки', 'Питание', 'Страховка']
+  },
+  {
+    id: 8,
+    title: 'Пик Улябор',
+    destination: 'Походы',
+    image: 'https://cdn.poehali.dev/projects/6f3fe8b0-bb5f-4fad-8f61-1495704d91c9/files/4787af63-99db-42e6-8cb0-6a711f397aae.jpg',
+    price: 9000,
+    duration: '2 дня',
+    rating: 4.8,
+    reviews: 98,
+    description: 'Сложный маршрут для опытных туристов с незабываемыми видами',
+    included: ['Гид', 'Снаряжение', 'Питание', 'Страховка']
+  },
+  {
+    id: 9,
+    title: 'Пик Хулугайша (3000м)',
+    destination: 'Походы',
+    image: 'https://cdn.poehali.dev/projects/6f3fe8b0-bb5f-4fad-8f61-1495704d91c9/files/4787af63-99db-42e6-8cb0-6a711f397aae.jpg',
+    price: 14000,
+    duration: '4 дня',
+    rating: 5.0,
+    reviews: 234,
+    description: 'Самый доступный трехтысячник в регионе - покорите свою первую высоту!',
+    included: ['Гид', 'Палатки', 'Питание', 'Снаряжение']
+  },
+  {
+    id: 10,
+    title: 'ББТ - Большая Байкальская Тропа',
+    destination: 'Походы',
+    image: 'https://cdn.poehali.dev/projects/6f3fe8b0-bb5f-4fad-8f61-1495704d91c9/files/fc3491af-0554-4fa5-a889-296e2ad034d5.jpg',
+    price: 16000,
+    duration: '5 дней',
+    rating: 5.0,
+    reviews: 412,
+    description: 'Легендарный маршрут вдоль берега Байкала - леса, пляжи, бухты',
+    included: ['Гид', 'Палатки', 'Питание', 'Трансфер']
+  },
+  {
+    id: 11,
+    title: 'КБЖД - Кругобайкальская ЖД',
+    destination: 'Прогулки',
+    image: 'https://cdn.poehali.dev/projects/6f3fe8b0-bb5f-4fad-8f61-1495704d91c9/files/79b193b4-281c-4c3b-baa5-633f44791376.jpg',
+    price: 5500,
+    duration: '1 день',
+    rating: 4.9,
+    reviews: 789,
+    description: 'Историческая железная дорога с туннелями и виадуками вдоль Байкала',
+    included: ['ЖД билет', 'Гид', 'Обед', 'Трансфер']
   }
 ];
 
 const destinations = [
+  { name: 'Походы', count: 6, icon: 'Mountain' },
   { name: 'Озеро Байкал', count: 8, icon: 'Waves' },
-  { name: 'Бурятия', count: 5, icon: 'Mountain' },
-  { name: 'Иркутская область', count: 12, icon: 'Trees' },
-  { name: 'Зимние туры', count: 6, icon: 'Snowflake' },
-  { name: 'Летние туры', count: 10, icon: 'Sun' }
+  { name: 'Бурятия', count: 5, icon: 'Tent' },
+  { name: 'Прогулки', count: 4, icon: 'TreePine' },
+  { name: 'Активный отдых', count: 12, icon: 'Footprints' }
 ];
 
 const reviews = [
@@ -130,6 +202,11 @@ export default function Index() {
   const [children, setChildren] = useState(0);
   const [selectedTour, setSelectedTour] = useState<Tour | null>(null);
   const [activeSection, setActiveSection] = useState('home');
+  const [tourType, setTourType] = useState<'all' | 'group' | 'individual'>('all');
+
+  const filteredTours = tourType === 'all' ? tours : 
+    tourType === 'group' ? tours.filter(t => ['Походы', 'Прогулки'].includes(t.destination)) :
+    tours.filter(t => !['Походы', 'Прогулки'].includes(t.destination));
 
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId);
@@ -155,7 +232,7 @@ export default function Index() {
             {[
               { id: 'home', label: 'Главная' },
               { id: 'tours', label: 'Туры' },
-              { id: 'destinations', label: 'Направления' },
+              { id: 'hikes', label: 'Походы' },
               { id: 'about', label: 'О нас' },
               { id: 'reviews', label: 'Отзывы' },
               { id: 'contacts', label: 'Контакты' }
