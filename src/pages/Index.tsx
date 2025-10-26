@@ -157,15 +157,51 @@ const tours: Tour[] = [
     reviews: 789,
     description: 'Историческая железная дорога с туннелями и виадуками вдоль Байкала',
     included: ['ЖД билет', 'Гид', 'Обед', 'Трансфер']
+  },
+  {
+    id: 12,
+    title: 'Шумак - целебные источники',
+    destination: 'Походы',
+    image: 'https://cdn.poehali.dev/projects/6f3fe8b0-bb5f-4fad-8f61-1495704d91c9/files/454fb19b-bc44-4908-aa14-af89ae750f6c.jpg',
+    price: 35000,
+    duration: '10-14 дней',
+    rating: 5.0,
+    reviews: 167,
+    description: 'Легендарные целебные источники в горах Саян - 100+ источников с разными свойствами. Настоящее приключение!',
+    included: ['Гид', 'Палатки', 'Питание', 'Трансфер', 'Баня']
+  },
+  {
+    id: 13,
+    title: 'Соболинные озёра',
+    destination: 'Походы',
+    image: 'https://cdn.poehali.dev/projects/6f3fe8b0-bb5f-4fad-8f61-1495704d91c9/files/65fc05c9-7de8-4b11-8942-61d9232d4a1b.jpg',
+    price: 22000,
+    duration: '7 дней',
+    rating: 5.0,
+    reviews: 93,
+    description: 'Горные озёра с кристально чистой водой - отличная рыбалка на хариуса и ленка в окружении дикой природы',
+    included: ['Гид', 'Палатки', 'Питание', 'Снаряжение для рыбалки']
+  },
+  {
+    id: 14,
+    title: 'Осенняя рыбалка на горной реке',
+    destination: 'Рыбалка',
+    image: 'https://cdn.poehali.dev/projects/6f3fe8b0-bb5f-4fad-8f61-1495704d91c9/files/1b2b4640-886b-4239-86a7-372e76f8f8b7.jpg',
+    price: 18000,
+    duration: '5 дней',
+    rating: 4.9,
+    reviews: 234,
+    description: 'Спиннинговая рыбалка на хариуса, ленка и тайменя в золотую осень - лучшее время для трофеев!',
+    included: ['Гид-рыбак', 'Палатки', 'Питание', 'Лодка', 'Снасти']
   }
 ];
 
 const destinations = [
-  { name: 'Походы', count: 6, icon: 'Mountain' },
+  { name: 'Походы', count: 8, icon: 'Mountain' },
+  { name: 'Рыбалка', count: 3, icon: 'Fish' },
   { name: 'Озеро Байкал', count: 8, icon: 'Waves' },
   { name: 'Бурятия', count: 5, icon: 'Tent' },
-  { name: 'Прогулки', count: 4, icon: 'TreePine' },
-  { name: 'Активный отдых', count: 12, icon: 'Footprints' }
+  { name: 'Активный отдых', count: 14, icon: 'Footprints' }
 ];
 
 const reviews = [
@@ -173,25 +209,25 @@ const reviews = [
     name: 'Алексей Соколов',
     avatar: 'АС',
     rating: 5,
-    text: 'Ольхон - это магия! Байкал покорил с первого взгляда. Организация на высшем уровне',
-    tour: 'Остров Ольхон',
-    date: '15 июля 2024'
+    text: 'Шумак - невероятное место! 12 дней в горах, целебные источники реально работают. Гид профессионал!',
+    tour: 'Шумак',
+    date: '15 августа 2024'
   },
   {
-    name: 'Мария Волкова',
-    avatar: 'МВ',
+    name: 'Дмитрий Иванов',
+    avatar: 'ДИ',
     rating: 5,
-    text: 'Аршан - идеальное место для восстановления сил. Воздух, вода, горы - всё прекрасно!',
-    tour: 'Аршан',
-    date: '3 августа 2024'
+    text: 'Осенняя рыбалка на хариуса - лучший отдых! Поймал трофейного ленка. Природа осенью волшебная',
+    tour: 'Осенняя рыбалка',
+    date: '25 сентября 2024'
   },
   {
-    name: 'Сергей Кузнецов',
-    avatar: 'СК',
+    name: 'Мария Петрова',
+    avatar: 'МП',
     rating: 5,
-    text: 'Листвянка понравилась всей семье. Дети в восторге от нерпинария!',
-    tour: 'Листвянка',
-    date: '20 июня 2024'
+    text: 'Пик Хулугайша - мой первый трехтысячник! Виды на Саяны потрясающие. Спасибо за поддержку!',
+    tour: 'Пик Хулугайша',
+    date: '10 июля 2024'
   }
 ];
 
@@ -205,8 +241,8 @@ export default function Index() {
   const [tourType, setTourType] = useState<'all' | 'group' | 'individual'>('all');
 
   const filteredTours = tourType === 'all' ? tours : 
-    tourType === 'group' ? tours.filter(t => ['Походы', 'Прогулки'].includes(t.destination)) :
-    tours.filter(t => !['Походы', 'Прогулки'].includes(t.destination));
+    tourType === 'group' ? tours.filter(t => ['Походы', 'Прогулки', 'Рыбалка'].includes(t.destination)) :
+    tours.filter(t => !['Походы', 'Прогулки', 'Рыбалка'].includes(t.destination));
 
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId);
@@ -232,7 +268,7 @@ export default function Index() {
             {[
               { id: 'home', label: 'Главная' },
               { id: 'tours', label: 'Туры' },
-              { id: 'hikes', label: 'Походы' },
+              { id: 'destinations', label: 'Направления' },
               { id: 'about', label: 'О нас' },
               { id: 'reviews', label: 'Отзывы' },
               { id: 'contacts', label: 'Контакты' }
@@ -394,9 +430,34 @@ export default function Index() {
 
       <section id="tours" className="py-16">
         <div className="container">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Популярные туры</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">Популярные туры</h2>
+          <div className="flex justify-center gap-4 mb-8">
+            <Button 
+              variant={tourType === 'all' ? 'default' : 'outline'}
+              onClick={() => setTourType('all')}
+              className={tourType === 'all' ? 'bg-gradient-to-r from-primary to-secondary' : ''}
+            >
+              Все туры
+            </Button>
+            <Button 
+              variant={tourType === 'group' ? 'default' : 'outline'}
+              onClick={() => setTourType('group')}
+              className={tourType === 'group' ? 'bg-gradient-to-r from-primary to-secondary' : ''}
+            >
+              <Icon name="Users" className="mr-2 h-4 w-4" />
+              Групповые походы
+            </Button>
+            <Button 
+              variant={tourType === 'individual' ? 'default' : 'outline'}
+              onClick={() => setTourType('individual')}
+              className={tourType === 'individual' ? 'bg-gradient-to-r from-primary to-secondary' : ''}
+            >
+              <Icon name="User" className="mr-2 h-4 w-4" />
+              Индивидуальные
+            </Button>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {tours.map((tour, idx) => (
+            {filteredTours.map((tour, idx) => (
               <Card 
                 key={tour.id} 
                 className="overflow-hidden hover:shadow-xl transition-all animate-slide-up"
